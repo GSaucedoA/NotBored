@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NotBored">
         <activity
+            android:name=".SuggestionActivity"
+            android:exported="true" />
+        <activity
             android:name=".TermsAndConditions"
             android:exported="true" />
         <activity
