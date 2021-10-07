@@ -2,12 +2,11 @@ package dev.cynomys.notbored
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import dev.cynomys.notbored.databinding.ActivityActivitiesBinding
 
 
-class Activities : AppCompatActivity() {
+class ActivitiesActivity : AppCompatActivity() {
     private val viewModel: ActivitiesViewModel by viewModels()
     private lateinit var binding: ActivityActivitiesBinding
     override fun onCreate(savedInstanceState: Bundle?) {

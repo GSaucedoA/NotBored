@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setListeners() {
         binding.startButton.setOnClickListener {
-            startActivity(Intent(this, Activities::class.java))
+            startActivity(Intent(this, ActivitiesActivity::class.java))
         }
         binding.textInputEditText.doAfterTextChanged {
             viewModel.canStart(it.toString())

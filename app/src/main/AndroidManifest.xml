@@ -16,7 +16,7 @@
             android:name=".TermsAndConditions"
             android:exported="true" />
         <activity
-            android:name=".Activities"
+            android:name=".ActivitiesActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
