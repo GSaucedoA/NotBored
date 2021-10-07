@@ -26,9 +26,20 @@
         <item>Give to your neighbours</item>
         <item>Make a cubby</item>
         <item>Watch a sport game</item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Go ten-pin bowling</item>
+        <item>Go on a nature walk</item>
+        <item>Go roller-skating</item>
+        <item>Play Frisbee</item>
+        <item>Create a family artwork</item>
+        <item>Visit a local farm and pick fruit</item>
+        <item>Play under the sprinkler</item>
+        <item>Try a new food or cuisine</item>
+        <item>Play putt-putt golf</item>
+        <item>Do a puzzle together</item>
+        <item>Get baking</item>
+        <item>Go camping</item>
+        <item>Go on a photo walk</item>
+        <item>Have a family movie night</item>
     </string-array>
 
     <string name="app_name">Not Bored</string>
