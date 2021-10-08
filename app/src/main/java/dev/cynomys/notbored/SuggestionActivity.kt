@@ -17,7 +17,8 @@ class SuggestionActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         binding.customToolbar.apply {
-            toolbarTitle.text = sharedPreferences.getString(Const.SUGGESTION_TITLE, "Where do you come?")
+            toolbarTitle.text =
+                sharedPreferences.getString(Const.SUGGESTION_TITLE, "Where do you come?")
             toolbarShuffle.visibility = View.INVISIBLE
             toolbarBack.visibility = View.VISIBLE
             toolbarBack.setOnClickListener {
@@ -25,5 +26,6 @@ class SuggestionActivity : AppCompatActivity() {
             }
         }
 
+        binding.suggestionTitle.text = sharedPreferences.getString(Const.SUGGESTION, "Error")
     }
 }
