@@ -16,9 +16,10 @@ class SuggestionActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences(Const.SHARED_NAME, MODE_PRIVATE)
 
         setContentView(binding.root)
+
+        val title = sharedPreferences.getString(Const.SUGGESTION_TITLE, "Where do you come?")
         binding.customToolbar.apply {
-            toolbarTitle.text =
-                sharedPreferences.getString(Const.SUGGESTION_TITLE, "Where do you come?")
+            toolbarTitle.text = title
             toolbarShuffle.visibility = View.INVISIBLE
             toolbarBack.visibility = View.VISIBLE
             toolbarBack.setOnClickListener {
@@ -27,5 +28,10 @@ class SuggestionActivity : AppCompatActivity() {
         }
 
         binding.suggestionTitle.text = sharedPreferences.getString(Const.SUGGESTION, "Error")
+        binding.participantsCount.text = sharedPreferences.getString(Const.PARTICIPANTS_COUNT, "0")
+        if (title == "Random") {
+            binding.categoryLayout.visibility = View.VISIBLE
+            binding.categoryText.text = resources.getStringArray(R.array.activitiesList).random()
+        }
     }
 }
