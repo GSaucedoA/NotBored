@@ -29,6 +29,9 @@ class ActivitiesAdapter(
         holder.headerContainer.setOnClickListener {
             sharedPreferences.edit().apply {
                 putString(Const.SUGGESTION_TITLE, headerTitle)
+                val randomSuggestion = context.resources.getStringArray(R.array.activitiesSuggestions)
+                val randomPos = (0..randomSuggestion.size - 1).random()
+                putString(Const.SUGGESTION, randomSuggestion.get(randomPos))
             }.commit()
             context.startActivity(Intent(context, SuggestionActivity::class.java))
         }
