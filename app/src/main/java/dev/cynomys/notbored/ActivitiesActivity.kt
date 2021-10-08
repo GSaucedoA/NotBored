@@ -39,7 +39,7 @@ class ActivitiesActivity : AppCompatActivity() {
 
     private fun randomSuggestion() {
         val randomSuggestion = resources.getStringArray(R.array.activitiesSuggestions)
-        val randomPos = (0..randomSuggestion.size - 1).random()
+        val randomPos = (randomSuggestion.indices).random()
         sharedPreferences.edit().apply {
             putString(Const.SUGGESTION, randomSuggestion.get(randomPos))
         }.commit()
