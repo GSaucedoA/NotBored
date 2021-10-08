@@ -50,6 +50,8 @@
     <string name="termsAndConditions">Terms and conditions</string>
     <string name="startText">Start</string>
     <string name="participantsText">Participants</string>
+    <string name="priceText">Price</string>
+    <string name="tryAnother">Try another</string>
     <string name="rightIcon">Right icon</string>
 
     <string name="termsAndConditionsText">Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos ridiculus iaculis,
