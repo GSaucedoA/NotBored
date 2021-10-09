@@ -35,10 +35,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ActivitiesActivity::class.java))
         }
         binding.textInputEditText.doAfterTextChanged {
-            viewModel.canStart(it.toString())
+            viewModel.canStart(it.toString(), binding.termsAccepted.isChecked)
         }
         binding.termsAndConditions.setOnClickListener {
             startActivity(Intent(this, TermsAndConditions::class.java))
+        }
+        binding.termsAccepted.setOnCheckedChangeListener { buttonView, isChecked ->
+            viewModel.canStart(binding.textInputEditText.text.toString(), isChecked)
         }
     }
 
