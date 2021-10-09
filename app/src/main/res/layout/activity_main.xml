@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE androidx.constraintlayout.widget.ConstraintLayout [<!ELEMENT androidx.constraintlayout.widget.ConstraintLayout (TextView|androidx.constraintlayout.widget.ConstraintLayout|androidx.appcompat.widget.AppCompatEditText|Spinner|Button|CheckBox)*><!ATTLIST androidx.constraintlayout.widget.ConstraintLayoutandroid:id CDATA #IMPLIEDandroid:layout_height CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDapp:layout_constraintBottom_toBottomOf CDATA #IMPLIEDapp:layout_constraintTop_toTopOf CDATA #IMPLIEDtools:context CDATA #IMPLIEDxmlns:android CDATA #IMPLIEDxmlns:app CDATA #IMPLIEDxmlns:tools CDATA #IMPLIED><!ELEMENT TextView (#PCDATA)><!ATTLIST TextViewandroid:fontFamily CDATA #IMPLIEDandroid:id CDATA #IMPLIEDandroid:layout_height CDATA #REQUIREDandroid:layout_marginBottom CDATA #IMPLIEDandroid:layout_width CDATA #REQUIREDandroid:padding CDATA #IMPLIEDandroid:text CDATA #REQUIREDandroid:textSize CDATA #IMPLIEDapp:layout_constraintBottom_toBottomOf CDATA #IMPLIEDapp:layout_constraintBottom_toTopOf CDATA #IMPLIEDapp:layout_constraintEnd_toEndOf CDATA #IMPLIEDapp:layout_constraintStart_toStartOf CDATA #REQUIREDapp:layout_constraintTop_toBottomOf CDATA #IMPLIEDapp:layout_constraintTop_toTopOf CDATA #IMPLIEDapp:layout_constraintVertical_bias CDATA #IMPLIEDstyle CDATA #IMPLIED><!ELEMENT androidx.appcompat.widget.AppCompatEditText (#PCDATA)><!ATTLIST androidx.appcompat.widget.AppCompatEditTextandroid:id CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDandroid:layout_marginHorizontal CDATA #REQUIREDandroid:background CDATA #REQUIREDandroid:inputType CDATA #REQUIREDandroid:padding CDATA #REQUIREDandroid:singleLine CDATA #REQUIREDandroid:text CDATA #REQUIREDandroid:textColor CDATA #REQUIREDandroid:textColorHint CDATA #REQUIREDapp:layout_constraintBottom_toBottomOf CDATA #REQUIREDapp:layout_constraintStart_toStartOf CDATA #REQUIREDapp:layout_constraintTop_toTopOf CDATA #REQUIRED><!ELEMENT Spinner (#PCDATA)><!ATTLIST Spinnerandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIRED><!ELEMENT Button (#PCDATA)><!ATTLIST Buttonandroid:id CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDandroid:layout_marginHorizontal CDATA #REQUIREDandroid:layout_marginTop CDATA #REQUIREDandroid:background CDATA #REQUIREDandroid:text CDATA #REQUIREDandroid:textAllCaps CDATA #REQUIREDapp:layout_constraintEnd_toEndOf CDATA #REQUIREDapp:layout_constraintStart_toStartOf CDATA #REQUIREDapp:layout_constraintTop_toBottomOf CDATA #REQUIRED><!ELEMENT CheckBox (#PCDATA)><!ATTLIST CheckBoxandroid:id CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDapp:layout_constraintBottom_toBottomOf CDATA #REQUIREDapp:layout_constraintEnd_toStartOf CDATA #REQUIREDapp:layout_constraintTop_toTopOf CDATA #REQUIRED>]>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,54 +11,88 @@
         style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="100dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+        app:layout_constraintBottom_toTopOf="@+id/options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:padding="8dp"
-        android:text="@string/participantsText"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
-        app:layout_constraintStart_toStartOf="@+id/textInputEditText" />
-
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/textInputEditText"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:background="@drawable/custom_edit_text"
-        android:inputType="number"
-        android:padding="8dp"
-        android:singleLine="false"
-        android:text="@string/number_one"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="8dp"
+            android:text="@string/participantsText"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+            app:layout_constraintStart_toStartOf="@+id/textInputEditText" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/textInputEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/custom_edit_text"
+            android:inputType="number"
+            android:padding="8dp"
+            android:text="@string/number_one"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textInputPrice"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="8dp"
+            android:text="@string/priceText"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputPrice"
+            app:layout_constraintStart_toStartOf="@+id/textInputPrice" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/textInputPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/custom_edit_text"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:text="@string/number_one"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/textInputEditText"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatEditText>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="150dp"
         android:background="#0991e9"
         android:text="@string/startText"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/options" />
 
     <CheckBox
         android:id="@+id/termsAccepted"
@@ -78,6 +112,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startButton"
-        app:layout_constraintVertical_bias="0.155"></TextView>
+        app:layout_constraintVertical_bias="0.155" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
