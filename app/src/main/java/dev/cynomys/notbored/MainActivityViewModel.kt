@@ -13,13 +13,13 @@ class MainActivityViewModel : ViewModel() {
         return participantsNumber >= 1
     }
 
-    private fun isPriceValid(price: Double): Boolean {
+    private fun isPriceValid(price: Float): Boolean {
         return price in 0.0..1.0
     }
 
     fun canStart(stringNumber: String, priceString: String, checked: Boolean) {
         val number: Int = if (stringNumber.isBlank()) 0 else stringNumber.toInt()
-        val price: Double = if (priceString.isNullOrBlank()) -1.0 else priceString.toDouble()
+        val price: Float = if (priceString.isNullOrBlank()) -1.0f else priceString.toFloat()
 
         _isValidStart.value =
             isParticipantsValid(number) && isPriceValid(price) && checked
