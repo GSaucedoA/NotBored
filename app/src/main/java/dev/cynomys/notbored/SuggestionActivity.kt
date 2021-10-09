@@ -35,7 +35,7 @@ class SuggestionActivity : AppCompatActivity() {
         setInfo(
             sharedPreferences.getString(Const.SUGGESTION, "Error"),
             sharedPreferences.getString(Const.PARTICIPANTS_COUNT, "0"),
-            getPrice(0f),
+            sharedPreferences.getString(Const.PRICE, "0")?.let { getPrice(it.toFloat()) },
             category
         )
         binding.tryAnother.setOnClickListener {
