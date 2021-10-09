@@ -31,22 +31,38 @@ class MainActivity : AppCompatActivity() {
         binding.startButton.setOnClickListener {
             sharedPreferences.edit().apply {
                 putString(Const.PARTICIPANTS_COUNT, binding.textInputEditText.text.toString())
+                putString(Const.PRICE, binding.textInputPrice.text.toString())
             }.apply()
             startActivity(Intent(this, ActivitiesActivity::class.java))
         }
         binding.textInputEditText.doAfterTextChanged {
-            viewModel.canStart(it.toString(), binding.termsAccepted.isChecked)
+            viewModel.canStart(
+                it.toString(),
+                binding.textInputPrice.text.toString(),
+                binding.termsAccepted.isChecked
+            )
+        }
+        binding.textInputPrice.doAfterTextChanged {
+            viewModel.canStart(
+                binding.textInputEditText.text.toString(),
+                it.toString(),
+                binding.termsAccepted.isChecked
+            )
         }
         binding.termsAndConditions.setOnClickListener {
             startActivity(Intent(this, TermsAndConditions::class.java))
         }
-        binding.termsAccepted.setOnCheckedChangeListener { buttonView, isChecked ->
-            viewModel.canStart(binding.textInputEditText.text.toString(), isChecked)
+        binding.termsAccepted.setOnCheckedChangeListener { _, isChecked ->
+            viewModel.canStart(
+                binding.textInputEditText.text.toString(),
+                binding.textInputPrice.text.toString(),
+                isChecked
+            )
         }
     }
 
     private fun setObservers() {
-        viewModel.isValidNumber.observe(this, {
+        viewModel.isValidStart.observe(this, {
             binding.startButton.isEnabled = it
         })
     }
