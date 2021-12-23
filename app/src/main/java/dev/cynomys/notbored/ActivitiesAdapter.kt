@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 class ActivitiesAdapter(
     private val array: Array<String>,
     private val sharedPreferences: SharedPreferences,
-    private val context: Context
 ) :
     RecyclerView.Adapter<ActivitiesAdapter.ViewHolder>() {
 
@@ -29,11 +28,11 @@ class ActivitiesAdapter(
         holder.headerContainer.setOnClickListener {
             sharedPreferences.edit().apply {
                 putString(Const.SUGGESTION_TITLE, headerTitle)
-                val randomSuggestion = context.resources.getStringArray(R.array.activitiesSuggestions)
+                val randomSuggestion = holder.headerContainer.context.resources.getStringArray(R.array.activitiesSuggestions)
                 val randomPos = (0..randomSuggestion.size - 1).random()
                 putString(Const.SUGGESTION, randomSuggestion.get(randomPos))
             }.commit()
-            context.startActivity(Intent(context, SuggestionActivity::class.java))
+            holder.headerContainer.context.startActivity(Intent( holder.headerContainer.context, SuggestionActivity::class.java))
         }
     }
 

@@ -34,7 +34,7 @@ class ActivitiesActivity : AppCompatActivity() {
             }
         }
         binding.recyclerView.adapter =
-            ActivitiesAdapter(resources.getStringArray(R.array.activitiesList), sharedPreferences, applicationContext)
+            ActivitiesAdapter(resources.getStringArray(R.array.activitiesList), sharedPreferences)
     }
 
     private fun randomSuggestion() {
